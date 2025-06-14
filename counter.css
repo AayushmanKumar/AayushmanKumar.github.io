@@ -1,0 +1,66 @@
+#ca-counter-div{
+    background-color: #00c984;
+    color: white;
+    width: 155%;
+    margin-left: -45%;
+    margin-right: 0%;
+    margin-left: 0%;
+    font-family: 'Lexend Deca', sans-serif;
+    padding-left: 45vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.ca-counter-chng-a{
+    margin-right: 3vh;
+    margin-left: -10vh;
+}
+
+.ca-counter-chng-aa{
+    margin-right: 3vh;
+    margin-left: -10vh;
+}
+
+
+
+
+
+.ca-counter-chng-b{
+    margin-right: 3vh;
+    margin-left: 24vh;
+}
+
+
+
+.ca-counter-chng-bb{
+    margin-right: 3vh;
+    margin-left: 29vh;
+}
+
+
+
+.ca-counter-chng-cc{
+    margin-right: 3vh;
+    margin-left: 27vh;
+}
+
+
+
+.ca-counter-chng-c{
+    margin-right: 3vh;
+    margin-left: 20vh;
+}
+
+
+.ca-counter-chng-d{
+    margin-right: 7vh;
+    margin-left: 23vh;
+}
+
+#ca-chng-dd{
+    margin-left: 27vh;
+}
+
+html{
+    background-color: rgb(239,239,239);
+}

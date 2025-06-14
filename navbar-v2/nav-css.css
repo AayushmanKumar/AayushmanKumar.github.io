@@ -1,0 +1,56 @@
+#ca-nav-ul{
+    list-style-type: none;
+}
+
+.ca-nav-li{
+    float: right;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    margin-top: 2.5vh;
+}
+
+.ca-nav-li:hover{
+    text-decoration: underline;
+    transition-delay: 100ms;
+}
+
+.ca-nav-link{
+    text-decoration: none;
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
+    font-size: large;
+    
+}
+
+#ca-logo-main{
+    height: 7%;
+    width: 7%;
+    float: left;
+    margin-left: 1vw;
+    margin-top: -2vh;
+}
+
+#ca-sec-main{
+    margin-top: 35vh;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 10vh;
+    margin-bottom: 40vh;
+}
+
+#ca-change-color{
+    color: #169d6c;
+}
+
+#ca-taimg{
+    height: 60%;
+    width: 85%;
+}
+
+#ca-tbimg{
+    height: 60vh;
+    width: 173vh;
+}
+
+#ca-p-main{
+    color: white;
+}

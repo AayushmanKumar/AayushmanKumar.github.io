@@ -1,0 +1,59 @@
+@import url('./utils.css');
+@import url('./left.css');
+@import url('./right.css');
+.contact{
+    background-image:url(./share_final_1_4.png);
+    height: 100vh;
+    width: 100vw;
+    background-size: bottom;
+    align-items: center;
+    font-family: 'Lexend Deca', sans-serif !important;
+}
+.c_h1{
+    text-align: center;
+    font-size: 79px;
+    /* background-color: aquamarine; */
+    color: aliceblue;
+    padding: 38px;
+    margin-bottom: 47px;
+    padding-top: 70px;
+}
+
+.inner_box_2{
+    padding-top: 10px;
+}
+
+.icon{
+    height: 100px;
+    width: 100px;
+    color: white;
+
+}
+
+.footer {
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 30px;
+    padding-top: 10px;  
+    background-color: rgba(0, 184, 83, 0.7);
+  }
+
+.cprt{
+    text-align: center;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    bottom: 34px;
+    left:0;
+    width:100%;
+    height: 38px;
+  }
+
+.icn{
+    height: 34px;
+    width: 34px;
+    align-items: center;
+}

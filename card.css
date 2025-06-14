@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root{
+    --share-color: rgb(33, 192, 134);
+}
+
+.share-color{
+    color: var(--share-color);
+}
+
+.box{
+    width: 100%;
+    height: auto;
+    background-color: #e6e6e6;
+    overflow: hidden;
+}
+
+.box .p-heading{
+    text-align: center;
+    margin: 30px;
+    font-size: 3em;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 500;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 50px 50px 50px;
+    overflow: auto;
+}
+
+.cards-container .cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 30px;
+    border-radius: 35px;
+    box-shadow: 10px 10px #21c0864a;
+}
+
+.cards img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin: 10px;
+}
+
+.cards .s-heading{
+    font-size: 1.8em;
+    font-weight: 500;
+    margin: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.cards-para{
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    padding: 0 10px 200px 10px;
+}
+
+/************* Media Querry *************/
+@media only screen and (max-width: 850px) {
+    .cards-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 0 10% 50px 10%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .box .p-heading{
+        font-size: 2.5em;
+    }
+
+    .cards-container{
+        padding: 0 30px 30px 30px;
+    }
+}

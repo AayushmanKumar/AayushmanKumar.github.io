@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.ra-main-block {
+    background-color: #e6e6e6;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ra-carousel-container{
+    position: relative;
+}
+
+.ra-content {
+    background-color: rgb(189 189 189 / 70%);
+    width: 80%;
+    margin: 100px auto 40px auto;
+    border-radius: 20px;
+    position: relative;
+}
+
+.ra-content img {
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: auto;
+    transform: translateY(-50%);
+    border: 15px solid rgb(230, 230, 230);;
+}
+
+.ra-quotes-left {
+    quotes: '\201C''';
+    display: block;
+}
+
+.ra-carousel-container q {
+    color: white;
+    font-size: 5em;
+    line-height: 20px;
+    padding: 0 40px 0 40px;
+}
+
+.ra-quotes-right {
+    quotes: '\201E''';
+    display: block;
+    text-align: right;
+}
+
+.share-color {
+    color: rgb(22, 157, 108);
+}
+
+.ra-para-content {
+    text-align: center;
+    padding: 0 50px 0 50px;
+    font-size: 1.3em;
+}
+
+.ra-carousel-para {
+    padding: 10px 0 50px 0;
+    margin-top: -70px;
+}
+
+.ra-prev,
+.ra-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.ra-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.ra-prev:hover,
+.ra-next:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.ra-dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0px 2px 40px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.ra-dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}

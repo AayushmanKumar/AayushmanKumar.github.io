@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f7;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Layout */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Main content */
+        .content {
+            flex: 1;
+            padding: 40px 60px;
+            max-width: 700px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            padding: 40px 20px;
+            border-left: 1px solid #eee;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                border-left: none;
+                border-top: 1px solid #eee;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            font-weight: normal;
+            margin-bottom: 30px;
+            color: #222;
+        }
+        
+        h2 {
+            font-size: 24px;
+            font-weight: normal;
+            margin: 40px 0 20px;
+            color: #222;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Header */
+        .header {
+            margin-bottom: 40px;
+        }
+        
+        .date {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .tags {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .tags a {
+            color: #999;
+            margin-right: 10px;
+        }
+        
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            margin-right: 20px;
+            color: #999;
+            font-size: 20px;
+        }
+        
+        /* Code blocks */
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 3px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        /* Sidebar styles */
+        .profile {
+            margin-bottom: 30px;
+        }
+        
+        .profile-image {
+            width: max-content;
+            max-width: 180px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        
+        .profile h3 {
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        
+        .profile p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .toc h3, .categories h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .toc ul, .categories ul {
+            color: #666;
+            list-style-type: none;
+        }
+        
+        .toc li, .categories li {
+            color: #666;
+        }
+        
+        .toc a {
+            font-size: 14px;
+            color: #666;
+            
+        }
+        
+        .categories a {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .categories .count {
+            color: #999;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        
+        /* Blockquote */
+        blockquote {
+            border-left: 3px solid #ddd;
+            padding-left: 20px;
+            margin-left: 0;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        /* Emphasis */
+        em {
+            font-style: italic;
+        }
+        
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            
+    <article id="first-post">
+        <div class="header">
+            <a href="#" class="back-button">←</a>
+            <span class="date">APR 01, 2025</span>
+            <span class="tags">
+    <a href="#">FIRST POST</a> 
+            </span>
+        </div>
+        <h1>First Post!</h1>
+        <p>Hi there! 👋</p>
+<p>Welcome to my personal blog, where I talk about AI, physics, chemistry, and whatever else I’m messing around with. Sometimes it’s computational modeling, sometimes it’s materials science, and sometimes it’s just me pretending to be a business guy.</p>
+<p>Expect insights, experiments, and the occasional unhinged deep dive. Feel free to stick around or reach out—always happy to chat!</p>
+<p>Thanks for stopping by! 🚀</p>
+    </article>
+    
+        </div>
+        
+        <div class="sidebar">
+            <div class="profile">
+                <img src="assets/pibble.jpg" alt="Profile Picture" class="profile-image">
+                <h3>Aniruth Ananthanarayanan</h3>
+                <p>Software engineer and music enthusiast. I write about materials science, physics, and Playboi Carti.</p>
+                <p>Follow me on <a href="https://github.com/AniruthAnanth">GitHub</a> or email me at <a href="mailto:aniruth.airlines@gmail.com">aniruth.airlines@gmail.com</a>.</p>
+                <a href="index.html">Return to homepage.</a>
+            </div>
+            
+            <div class="toc">
+                <h3>TABLE OF CONTENTS</h3>
+                <ul>
+                    <!-- Table of contents will be generated dynamically via JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="categories">
+                <h3>CATEGORIES</h3>
+                <ul>
+                    <li><a href="#">first post</a> <span class="count">[1]</span></li>
+
+                </ul>
+            </div>
+            
+            <div class="toc">
+                <h3>RECENT POSTS</h3>
+                <ul>
+                    <li><a href="#first-post">First Post!</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate table of contents and smooth scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add IDs to headings if they don't have them and build TOC.
+            const headings = document.querySelectorAll('h1, h2');
+            const tocList = document.querySelector('.toc ul');
+            headings.forEach(heading => {
+                if (!heading.id) {
+                    heading.id = heading.textContent.toLowerCase().replace(/[^\w]+/g, '-');
+                }
+                let li = document.createElement('li');
+                let a = document.createElement('a');
+                a.href = '#' + heading.id;
+                a.textContent = heading.textContent;
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+            
+            // Smooth scrolling for TOC links.
+            document.querySelectorAll('.toc a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+            
+            // Back button functionality.
+            document.querySelectorAll('.back-button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

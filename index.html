@@ -3,28 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <title>Under Development</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
-      background-color: white;
-      height: 100vh;
+      padding: 0;
+      background: #111; /* dark background */
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: 'Poppins', Helvetica, sans-serif;
+      color: #f2f2f2;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
-    h1 {
-      color: gray;
-      font-size: 7vw;
-      font-weight: 900;
-      margin: 0;
-      text-transform: uppercase;
+
+    .scrolling-wrapper {
+      width: 100%;
+      overflow: hidden;
       white-space: nowrap;
-      font-family: Helvetica, Arial, sans-serif;
-      letter-spacing: 0.2vw;
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .scrolling-track {
+      display: inline-block;
+      animation: scroll-left 8.33s linear infinite;
+    }
+
+    .scrolling-text {
+      display: inline-block;
+      font-size: 19vw;
+      font-weight: 600; /* bold but not too thick */
+      color: #f2f2f2;
+      text-transform: uppercase;
+      margin-right: 3vw;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .footer {
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: 400; /* normal */
+      color: #888;
+      background: #111;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
 <body>
-  <h1>UNDER DEVELOPMENT</h1>
+  <div class="scrolling-wrapper">
+    <div class="scrolling-track">
+      <span class="scrolling-text">Under Development</span>
+      <span class="scrolling-text">Under Development</span>
+    </div>
+  </div>
+  <div class="footer">
+    © 2025 Aayushman Kumar • Portfolio in Progress
+  </div>
 </body>
 </html>

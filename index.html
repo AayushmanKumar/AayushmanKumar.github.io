@@ -1,99 +1,600 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html data-performance="full" data-theme="dark" data-view="grid" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Aayushman's Portfolio</title>
-  <link rel="icon" type="image/svg+xml" sizes="any" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
-  <style>
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-color: #ffffff;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23ddd' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      animation: bg-scroll 10s linear infinite;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      /* background: #111; */
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      font-family: 'Poppins', Helvetica, sans-serif;
-      color: #f2f2f2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .scrolling-wrapper {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-    }
-
-    .scrolling-track {
-      display: inline-block;
-      animation: scroll-left 8.33s linear infinite;
-    }
-
-    .scrolling-text {
-      display: inline-block;
-      font-size: 19vw;
-      font-weight: 600;
-      color: #888;
-      text-transform: uppercase;
-      margin-right: 3vw;
-    }
-
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .footer {
-      width: 100%;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: #888;
-      /* background: #111; */
-      letter-spacing: 0.5px;
-    }
-
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- SEO Meta Tags -->
+<title>Aayushman's Portfolio</title>
+<meta content="Welcome to Aayushman's Portfolio." name="description"/>
+<meta content="Aayushman Kumar" name="author"/>
+<!-- Favicon: Clean SVG with Dark/Light theme adaptability & Fire Emoji fallback -->
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="assets/fire.png" rel="alternate icon" type="image/png"/>
+<!-- Fonts: Quattrocento (Headings), Lato (UI Controls), IBM Plex Mono (Editorial Monospace Body), JetBrains Mono (Code Blocks) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&amp;family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=Lato:ital,wght@0,300;0,400;0,700;1,400&amp;family=Quattrocento:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/katex.min.css" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-  <div class="scrolling-wrapper">
-    <div class="scrolling-track">
-      <span class="scrolling-text"> • Under • Development • </span>
-      <span class="scrolling-text">Under • Development</span>
-    </div>
-  </div>
-  <div class="footer">
-    © 2025 Aayushman Kumar • Portfolio in Progress
-  </div>
+<!-- Background Canvas Layer -->
+<div aria-hidden="true" class="bg-canvas-wrapper">
+<div class="bg-canvas-layer"></div>
+</div>
+<!-- Sticky Header -->
+<header class="sticky-header">
+<div class="nav-section">
+<nav aria-label="Main navigation" class="nav" role="navigation">
+<!-- Left Section: Logo & Name -->
+<div class="logo-nav">
+<a aria-label="Aayushman Kumar" class="brand-with-name" href="javascript:void(0)" id="brand-logo-link">
+<span class="brand">
+<svg aria-hidden="true" class="brand-logo" fill="currentColor" height="27" viewbox="0 0 1049 739" width="38">
+<g transform="translate(-5,739) scale(0.1,-0.1)">
+<path d="M50 7382 c0 -4 39 -50 88 -102 l87 -94 5 -3544 5 -3544 130 102 c72 55 186 145 254 198 68 53 138 108 156 122 19 14 146 113 284 220 l250 195 3 1385 3 1385 292 3 293 2 2 -1155 3 -1156 365 286 c201 157 403 317 450 354 47 37 124 98 173 136 l87 69 -1 2365 c0 1301 -3 2380 -6 2396 -4 25 -18 38 -81 76 -43 25 -174 105 -293 178 l-216 131 -1166 0 c-642 0 -1167 -4 -1167 -8z m1850 -1807 l0 -745 -295 0 -295 0 0 738 c0 406 3 742 7 745 3 4 136 7 295 7 l288 0 0 -745z M3297 7383 c-4 -3 -7 -535 -7 -1182 l0 -1176 268 -222 c147 -122 326 -271 399 -332 l131 -111 431 0 431 0 0 -705 c0 -388 -3 -705 -7 -705 -5 1 -20 11 -34 23 -15 12 -142 116 -283 231 l-256 209 0 249 0 248 -540 0 -540 0 0 -614 0 -614 53 -44 c56 -48 134 -111 547 -444 146 -117 356 -287 468 -378 112 -92 208 -166 213 -166 9 0 394 287 1169 872 l285 215 3 2228 c1 1277 6 2233 11 2239 10 13 101 177 101 182 0 2 -267 3 -592 2 l-593 -3 -3 -957 -2 -958 -290 0 -290 0 0 960 0 960 -533 0 c-294 0 -537 -3 -540 -7z M6160 7380 c0 -15 24 -60 70 -132 l40 -61 0 -2472 0 -2471 168 -130 c359 -279 731 -570 817 -639 l90 -73 5 1248 c3 687 7 1250 10 1253 3 3 37 -13 75 -35 39 -22 129 -72 200 -110 72 -39 169 -93 218 -121 l87 -49 0 -1323 0 -1323 88 -68 c168 -131 619 -484 795 -623 98 -78 180 -141 182 -141 3 0 4 883 3 1962 l-3 1961 -125 69 c-69 39 -156 87 -195 107 -496 266 -565 305 -553 317 7 6 146 89 308 184 162 95 357 209 433 254 l137 81 0 1071 0 1070 65 92 c36 51 65 97 65 102 0 7 -215 9 -597 8 l-598 -3 -3 -957 -2 -957 -98 -57 c-126 -74 -352 -207 -422 -249 -30 -18 -58 -31 -63 -28 -4 2 -7 509 -7 1126 l1 1122 -596 3 c-413 1 -595 -1 -595 -8z M9167 7384 c-3 -3 30 -51 74 -106 l79 -100 0 -2417 0 -2416 301 -210 c165 -115 352 -248 416 -293 165 -119 330 -232 337 -232 3 0 6 1254 6 2788 l0 2787 80 95 c43 52 79 98 80 103 0 8 -1364 10 -1373 1z M9320 1380 l0 -600 278 -206 c152 -114 384 -288 516 -386 131 -99 244 -182 252 -185 12 -4 14 87 14 609 l0 614 -117 84 c-102 73 -425 302 -825 587 l-118 83 0 -600z"></path>
+</g>
+</svg>
+</span>
+<span class="brand-name">Aayushman Kumar</span>
+</a>
+</div>
+<!-- Centre Section: Projects & About Category Switch OR Back to Projects -->
+<div class="nav-center">
+<div aria-label="Content Navigation" class="category-switch" id="category-switch" role="tablist">
+<button aria-controls="projects-container" aria-selected="true" class="category-btn category-btn--active" id="tab-projects" role="tab" type="button">
+                            Projects
+                        </button>
+<button aria-controls="about-section" aria-selected="false" class="category-btn" id="tab-about" role="tab" type="button">
+                            About
+                        </button>
+</div>
+<a class="back-link" href="javascript:void(0)" id="back-to-projects" style="display: none;">← Back to Projects</a>
+</div>
+<!-- Right Section: Navigation Controls -->
+<div class="nav-controls">
+<!-- Theme Toggle -->
+<button aria-label="Switch to Dark Theme" class="control-btn" id="theme-toggle" title="Switch to Dark Theme" type="button">
+<span class="control-label">Theme</span>
+<svg aria-hidden="true" class="theme-icon" fill="none" height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 0C15.3502 -2.33867e-07 19.7195 4.20167 19.9873 9.48535C19.9959 9.6558 20 9.8274 20 10C20 10.1726 19.9959 10.3442 19.9873 10.5146C19.7195 15.7983 15.3502 20 10 20C9.8274 20 9.6558 19.9959 9.48535 19.9873C4.20167 19.7195 5.66746e-07 15.3502 0 10C-2.41411e-07 4.47715 4.47715 8.42747e-07 10 0ZM10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18L10 2Z" fill="currentColor"></path>
+</svg>
+</button>
+<!-- Saturation / Contrast Toggle -->
+<button aria-label="Switch to Low Saturation Mode" class="control-btn" id="performance-toggle" title="Switch to Low Saturation Mode" type="button">
+<span class="control-label">Contrast</span>
+<svg aria-hidden="true" class="perf-icon icon-perf-full" fill="none" height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 0C15.5228 1.28855e-07 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C1.28855e-07 4.47715 4.47715 0 10 0ZM10 2C5.58172 2 2 5.58172 2 10H18C18 5.58172 14.4183 2 10 2Z" fill="currentColor"></path>
+</svg>
+<svg aria-hidden="true" class="perf-icon icon-perf-low" fill="none" height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 20C4.47715 20 5.20257e-07 15.5228 8.74228e-07 10C1.35705e-06 4.47715 4.47715 -1.35705e-06 10 -8.74228e-07C15.5228 -3.91405e-07 20 4.47715 20 10C20 15.5228 15.5228 20 10 20ZM10 18C14.4183 18 18 14.4183 18 10L2 10C2 14.4183 5.58172 18 10 18Z" fill="currentColor"></path>
+</svg>
+</button>
+<!-- View Mode Toggle -->
+<button aria-label="Switch to List View" class="control-btn view-mode-btn" id="view-mode-toggle" title="Switch to List View" type="button">
+<span class="control-label">View</span>
+<svg aria-hidden="true" class="view-icon icon-list" fill="none" height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 20H0V0H20V20ZM2 10V18H18V10H2Z" fill="currentColor"></path>
+</svg>
+<svg aria-hidden="true" class="view-icon icon-grid" fill="none" height="18" viewbox="0 0 20 20" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 20H0V0H20V20ZM10 10H2V18H10V10H18V2H10V10Z" fill="currentColor"></path>
+</svg>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="main-content" id="main-content">
+<!-- ========================================== -->
+<!-- Projects View                              -->
+<!-- ========================================== -->
+<div class="projects-container projects-grid" id="projects-container">
+<!-- Project 1: AI Browser Test Automation Framework -->
+<!-- Project 2: Production API Triage Agent -->
+<!-- Project 3: ELB Response Diff View Console -->
+<!-- Project 4: Grafana Latency & Observability Dashboard -->
+<!-- Project 5: TradeTrack Market Analytics -->
+<!-- Project 6: Course Registration Engine -->
+<!-- Project 7: Memory Efficient Versioned File Indexer -->
+<!-- Project 8: GeoEdge Computer Vision Pipeline -->
+<!-- Project 9: QuantOption Multi-Model Pricing -->
+<!-- Project 10: Mental Health Insights Dashboard -->
+<!-- Project 11: Stock Price Prediction RNNs -->
+<!-- Project 12: NeuralPHY (PINNs) -->
+<!-- Project 13: Satellite Image Georeferencing -->
+<!-- Project 14: Automated Car Parking System -->
+<article class="project-card" data-id="file-indexer" data-tile="1x1">
+<div class="project-image">
+<img alt="Versioned File Indexer" loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">Versioned File Indexer</h3>
+<p class="project-description">
+                        High-throughput C++ UNIX indexer with producer-consumer multithreading, POSIX mmap I/O, achieving 1.33 GiB/s parallel throughput across worker threads.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">C++20</span>
+<span class="tag">POSIX</span>
+<span class="tag">Multithreading</span>
+</div>
+</div>
+</div>
+</article><article class="project-card project-card--featured" data-id="browser-test-framework" data-tile="1x2">
+<div class="project-image">
+<img alt="Browser Test Automation" loading="lazy" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">AI Browser Test Automation Framework</h3>
+<p class="project-description">
+                        Natural-language-driven browser automation engine utilizing TreeWalker DOM serialization and Google Gemini Flash to eliminate flaky XPath/CSS selectors across e-commerce flows.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">TypeScript</span>
+<span class="tag">Playwright</span>
+<span class="tag">Gemini Flash</span>
+<span class="tag">Node.js</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="api-triage-agent" data-tile="1x1">
+<div class="project-image">
+<img alt="API Triage Agent" loading="lazy" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">Production API Triage Agent</h3>
+<p class="project-description">
+                        Asynchronous pipeline using Python asyncio to concurrently fetch Prometheus metrics, pod logs, and Jira context, slashing incident triage time from 20 minutes to under 30 seconds.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">Python</span>
+<span class="tag">asyncio</span>
+<span class="tag">LiteLLM</span>
+<span class="tag">Kubernetes</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="grafana-observability" data-tile="1x1">
+<div class="project-image">
+<img alt="Grafana Observability" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">Grafana Observability Dashboard</h3>
+<p class="project-description">
+                        Real-time latency and traffic observability across Java mAPI backend services with dynamic PromQL auto-discovery and P99-sorted bottleneck detection.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">Grafana</span>
+<span class="tag">Prometheus</span>
+<span class="tag">PromQL</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="elb-diff-console" data-tile="1x1">
+<div class="project-image">
+<img alt="ELB Diff Console" loading="lazy" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">ELB Response Diff Console</h3>
+<p class="project-description">
+                        Secure Java reverse proxy equipped with an order-agnostic semantic JSON diff algorithm matching objects by key and arrays by identity to eliminate false-positive diffs.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">Java</span>
+<span class="tag">Dropwizard</span>
+<span class="tag">Vanilla JS</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="course-registration-engine" data-tile="1x1">
+<div class="project-image">
+<img alt="Course Registration Engine" loading="lazy" src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">Course Registration Engine</h3>
+<p class="project-description">
+                        11-table 3NF relational schema with a SQL-native Weighted Sum Model scoring engine processing multi-factor rankings in sub-50ms with ACID isolation.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">Node.js</span>
+<span class="tag">MySQL</span>
+<span class="tag">React.js</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="mental-health-dashboard" data-tile="1x1">
+<div class="project-image">
+<img alt="Mental Health Dashboard" loading="lazy" src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">Mental Health Big Data Dashboard</h3>
+<p class="project-description">
+                        Big data visual analytics platform processing 292,000+ responses to extract demographic patterns across 17+ attributes with D3.js visual dashboards.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">D3.js</span>
+<span class="tag">React</span>
+<span class="tag">Python</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="geoedge-pipeline" data-tile="1x1">
+<div class="project-image">
+<img alt="GeoEdge Pipeline" loading="lazy" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">GeoEdge CV Pipeline</h3>
+<p class="project-description">
+                        High-throughput boundary delineation pipeline with separable Gaussian filters and C++20 SIMD vectorization processing 100M+ pixels in under 12 seconds.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">C++20</span>
+<span class="tag">OpenCV</span>
+<span class="tag">GDAL</span>
+<span class="tag">SIMD</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="neuralphy-pinn" data-tile="1x1">
+<div class="project-image">
+<img alt="NeuralPHY PINN" loading="lazy" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">NeuralPHY Physics-Informed NNs</h3>
+<p class="project-description">
+                        Solving partial differential equations (PDEs) for harmonic oscillators, fluid flow, and heat equations using Autograd and PyTorch PINNs.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">PyTorch</span>
+<span class="tag">PINNs</span>
+<span class="tag">Scientific ML</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="quantoption-pricing" data-tile="1x1">
+<div class="project-image">
+<img alt="QuantOption Platform" loading="lazy" src="https://images.unsplash.com/photo-1642543492481-44e81e3914a7?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">QuantOption Pricing Platform</h3>
+<p class="project-description">
+                        Real-time option pricing platform with Black-Scholes-Merton, Monte Carlo simulations, and XGBoost regressors achieving &lt;2% deviation on market data.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">Python</span>
+<span class="tag">Monte Carlo</span>
+<span class="tag">XGBoost</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="tradetrack-analytics" data-tile="1x1">
+<div class="project-image">
+<img alt="TradeTrack Analytics" loading="lazy" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">TradeTrack Analytical Tool</h3>
+<p class="project-description">
+                        Quantitative analysis on 1M+ trade logs, building modular LangGraph signal tools and FastAPI services, reducing order failure by 30%.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">FastAPI</span>
+<span class="tag">LangGraph</span>
+<span class="tag">Streamlit</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="automated-parking-system" data-tile="1x1">
+<div class="project-image">
+<img alt="Automated Parking System" loading="lazy" src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">Automated Car Parking System</h3>
+<p class="project-description">
+                        Compact automated parking module with custom 3D-printed rotor components, Arduino motor speed control, and embedded systems integration.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">Arduino</span>
+<span class="tag">Embedded</span>
+<span class="tag">3D Printing</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="stock-prediction-rnn" data-tile="1x1">
+<div class="project-image">
+<img alt="Stock Prediction RNN" loading="lazy" src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">Stock Prediction using Hybrid RNNs</h3>
+<p class="project-description">
+                        Predictive forecasting engine leveraging LSTM networks (64-32-16 units) and hybrid ARIMA-LSTM architectures achieving 92% directional accuracy.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">PyTorch</span>
+<span class="tag">LSTM</span>
+<span class="tag">ARIMA</span>
+</div>
+</div>
+</div>
+</article><article class="project-card" data-id="satellite-georeferencing" data-tile="1x1">
+<div class="project-image">
+<img alt="Satellite Georeferencing" loading="lazy" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=700&amp;auto=format&amp;fit=crop&amp;q=80"/>
+</div>
+<div class="project-content">
+<h3 class="project-title">Satellite Image Georeferencing</h3>
+<p class="project-description">
+                        Automated geo-coding framework using SIFT feature matching, RANSAC outlier rejection, and custom least-squares polynomial transformation.
+                    </p>
+<div class="project-meta">
+<div class="project-tags">
+<span class="tag">SIFT</span>
+<span class="tag">RANSAC</span>
+<span class="tag">Computer Vision</span>
+</div>
+</div>
+</div>
+</article></div>
+<!-- ========================================== -->
+<!-- About View                                 -->
+<!-- ========================================== -->
+<section class="about-section" hidden="" id="about-section">
+<div class="about-container">
+<!-- 1. Intro Section -->
+<section class="intro-section">
+<div class="intro-grid">
+<div class="intro-content">
+<h2>Software Engineering, High-Throughput Systems &amp; Autonomous Agents</h2>
+<p class="lead-text">
+                                Final year undergraduate at Indian Institute of Technology Kanpur (IIT Kanpur). Competitive programmer (Codeforces Expert, rating 1742, AIR 365; Advent of Code Global Rank 8 &amp; 50) and systems engineer.
+                            </p>
+<p>
+                                Experienced in architecting high-throughput distributed tools, LLM automation agents, and modern frontend interfaces across TypeScript, Python, C++, and Java. Passionate about building resilient distributed architectures, eliminating production bottlenecks, and translating complex systems into clean, responsive software.
+                            </p>
+</div>
+</div>
+</section>
+<!-- 2. Timeline Section (Professional Journey) -->
+<section class="timeline-section">
+<h2 class="section-title">Professional Journey</h2>
+<div aria-label="Professional timeline" class="horizontal-timeline" role="region">
+<!-- Progress Bar Container -->
+<div class="timeline-container">
+<div aria-hidden="true" class="timeline-line">
+<div class="timeline-base"></div>
+<div class="timeline-progress" id="timeline-progress-bar" style="width: 85%;"></div>
+</div>
+<div class="timeline-markers" id="timeline-markers">
+<button aria-expanded="false" aria-label="Apricity TS position" class="timeline-marker above passed" data-index="0" style="left: 15%;" type="button">
+<span aria-hidden="true" class="marker-dot"></span>
+<div class="timeline-label">
+<span class="timeline-year">Feb'25</span>
+<span class="timeline-company">Apricity TS</span>
+<span class="timeline-role">Data Analytics</span>
+</div>
+</button>
+<button aria-expanded="false" aria-label="Invictron Systems position" class="timeline-marker below passed" data-index="1" style="left: 50%;" type="button">
+<span aria-hidden="true" class="marker-dot"></span>
+<div class="timeline-label">
+<span class="timeline-year">May'25</span>
+<span class="timeline-company">Invictron Systems</span>
+<span class="timeline-role">Product &amp; Systems</span>
+</div>
+</button>
+<button aria-expanded="true" aria-label="Flipkart position" class="timeline-marker above active" data-index="2" style="left: 85%;" type="button">
+<span aria-hidden="true" class="marker-dot"></span>
+<div class="timeline-label">
+<span class="timeline-year">May'26</span>
+<span class="timeline-company">Flipkart</span>
+<span class="timeline-role">SWE Intern</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Timeline Navigation Bar -->
+<div class="timeline-navigation">
+<button aria-label="Previous timeline item" class="nav-button nav-prev" id="timeline-prev-btn" type="button">← Prev</button>
+<span class="nav-indicator" id="timeline-indicator">3 of 3</span>
+<button aria-label="Next timeline item" class="nav-button nav-next" disabled="" id="timeline-next-btn" type="button">Next →</button>
+</div>
+<!-- Active Timeline Detail Card -->
+<div class="content-card" id="timeline-card" role="tabpanel">
+<div class="content-header">
+<div class="header-left">
+<h3 class="position-title" id="timeline-job-title">Software Engineering Intern</h3>
+<span class="company-name" id="timeline-company-name">Flipkart</span>
+</div>
+<span class="date-range" id="timeline-date-range">May’26 - July’26</span>
+</div>
+<div class="content-body">
+<ul class="timeline-bullets" id="timeline-bullets">
+<li>Architected an LLM-driven browser test automation framework with Google Gemini Flash &amp; Playwright; built a TreeWalker DOM serialization engine to flatten LLM token overhead and achieved 8-12x faster execution than vision-based alternatives.</li>
+<li>Engineered an asynchronous production API incident triage agent using Python asyncio to concurrently fetch Prometheus metrics, Kubernetes pod logs, and Jira history, slashing triage time from 20 minutes to under 30 seconds.</li>
+<li>Developed the ELB Response Diff View Console in Java (Dropwizard) and built an order-agnostic semantic JSON diff algorithm matching objects by key and arrays by identity to eliminate deployment verification regressions.</li>
+<li>Designed dynamic PromQL latency and traffic observability dashboards in Grafana with P99 auto-aggregations for Java mAPI microservices.</li>
+</ul>
+<div class="technologies">
+<div class="tech-tags" id="timeline-tech-tags">
+<span class="tech-tag">TypeScript</span>
+<span class="tech-tag">Playwright</span>
+<span class="tech-tag">Gemini Flash</span>
+<span class="tech-tag">Python</span>
+<span class="tech-tag">asyncio</span>
+<span class="tech-tag">LiteLLM</span>
+<span class="tech-tag">Kubernetes</span>
+<span class="tech-tag">Prometheus</span>
+<span class="tech-tag">Java</span>
+<span class="tech-tag">Dropwizard</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Skills Section (Capabilities & Stack) -->
+<section class="skills-section">
+<h2 class="section-title">Capabilities &amp; Stack</h2>
+<div class="skills-grid">
+<div class="skill-group">
+<h3>Languages &amp; Systems</h3>
+<div class="skill-pills">
+<span class="tech-tag">C++20</span>
+<span class="tech-tag">Python 3</span>
+<span class="tech-tag">TypeScript</span>
+<span class="tech-tag">JavaScript (ES6+)</span>
+<span class="tech-tag">Java</span>
+<span class="tech-tag">SQL (MySQL / Postgres)</span>
+<span class="tech-tag">POSIX / Bash</span>
+</div>
+</div>
+<div class="skill-group">
+<h3>Frameworks &amp; Architecture</h3>
+<div class="skill-pills">
+<span class="tech-tag">FastAPI</span>
+<span class="tech-tag">Playwright</span>
+<span class="tech-tag">React.js</span>
+<span class="tech-tag">Node.js</span>
+<span class="tech-tag">Dropwizard</span>
+<span class="tech-tag">LangGraph</span>
+<span class="tech-tag">Model Context Protocol (MCP)</span>
+</div>
+</div>
+<div class="skill-group">
+<h3>Infrastructure &amp; Observability</h3>
+<div class="skill-pills">
+<span class="tech-tag">Docker</span>
+<span class="tech-tag">Kubernetes</span>
+<span class="tech-tag">Prometheus</span>
+<span class="tech-tag">Grafana</span>
+<span class="tech-tag">Git &amp; GitHub Actions</span>
+<span class="tech-tag">Linux / Unix Systems</span>
+</div>
+</div>
+<div class="skill-group">
+<h3>Algorithms &amp; Core</h3>
+<div class="skill-pills">
+<span class="tech-tag">Competitive Programming</span>
+<span class="tech-tag">Distributed Systems</span>
+<span class="tech-tag">Concurrency &amp; Multithreading</span>
+<span class="tech-tag">Physics-Informed NNs (PINNs)</span>
+<span class="tech-tag">Monte Carlo Simulations</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Contact Section -->
+<section class="contact-section">
+<h2 class="section-title">Get In Touch</h2>
+<div class="contact-methods">
+<div class="contact-method">
+<div class="contact-details">
+<h3>Academic Email</h3>
+<a href="mailto:aayushmank23@iitk.ac.in">aayushmank23@iitk.ac.in</a>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-details">
+<h3>Personal Email</h3>
+<a href="mailto:ayushmankumar47@gmail.com">ayushmankumar47@gmail.com</a>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-details">
+<h3>GitHub</h3>
+<a href="https://github.com/AayushmanKumar" rel="noopener noreferrer" target="_blank">github.com/AayushmanKumar</a>
+</div>
+</div>
+<div class="contact-method">
+<div class="contact-details">
+<h3>LinkedIn</h3>
+<a href="https://linkedin.com" rel="noopener noreferrer" target="_blank">Connect on LinkedIn</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Interests Section -->
+<section class="interests-section">
+<h2 class="section-title">Hobbies &amp; Interests</h2>
+<div class="interests-grid">
+<div class="interest-item">
+<h3>Competitive Programming</h3>
+<p>Codeforces Expert (rating 1742, AIR 365) and Advent of Code Global Rank 8 &amp; 50. Passionate about solving complex algorithmic puzzles and speed-coding.</p>
+</div>
+<div class="interest-item">
+<h3>Systems &amp; Autonomous Agents</h3>
+<p>Exploring multi-agent orchestration, high-throughput asynchronous scraping, Model Context Protocol (MCP), and real-time inference optimization.</p>
+</div>
+<div class="interest-item">
+<h3>Scientific ML &amp; Neural Modeling</h3>
+<p>Deeply interested in Physics-Informed Neural Networks (PINNs) for PDE solvers, dynamic systems modeling, and scientific computing.</p>
+</div>
+<div class="interest-item">
+<h3>Hardware &amp; Rapid Prototyping</h3>
+<p>Experimenting with embedded microcontrollers (Arduino/ESP32), 3D printing custom mechanical mechanisms, and sensor integration.</p>
+</div>
+</div>
+</section>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- Single Project Detail View                 -->
+<!-- ========================================== -->
+<div class="project-detail" id="project-detail-view" style="display: none;">
+<div class="project-container">
+<!-- Hero Image -->
+<div class="project-hero-image">
+<img alt="" id="detail-hero-img" loading="eager" src=""/>
+</div>
+<!-- Two-Column Layout: Content & Sidebar -->
+<div class="project-content-layout">
+<div class="content-main">
+<!-- Sticky Project Meta Bar -->
+<div class="project-meta-sticky" id="detail-project-meta">
+<div class="project-links" id="detail-project-links">
+<!-- Dynamic Live & Source Links -->
+</div>
+<div class="project-tags-list" id="detail-project-tags">
+<!-- Dynamic Tag Badges -->
+</div>
+</div>
+<!-- Rendered Markdown Body -->
+<article class="markdown-content" id="detail-markdown-body">
+<!-- Populated dynamically via marked.js -->
+</article>
+</div>
+<!-- Sticky Table of Contents Sidebar -->
+<aside class="content-sidebar">
+<nav aria-label="Table of contents" class="toc" id="detail-toc">
+<h3>Table of Contents</h3>
+<ul id="detail-toc-list">
+<!-- Auto-generated from H1/H2/H3 headings -->
+</ul>
+</nav>
+</aside>
+</div>
+</div>
+</div>
+</main>
+<!-- Site Footer -->
+<footer class="site-footer">
+<p class="footer-text">Copyright © Aayushman Kumar 2026 - designed and developed by me</p>
+</footer>
+<!-- Scripts -->
+<script src="assets/katex.min.js"></script>
+<script src="assets/marked.min.js"></script>
+<script src="projects-data.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
